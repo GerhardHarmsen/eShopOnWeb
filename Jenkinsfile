@@ -19,5 +19,4 @@ pipeline {
                 sh 'wpctl env:apply -y --package out/webplus-dotnet-demo.zip --category "ASP.NET Core" --app webplus-dotnet-demo --env test-env --create-on-absent'
             }
         }
-    }
 }
