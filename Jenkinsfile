@@ -1,5 +1,12 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'docker-compose'
+      args '''docker-compose build 
+docker-compose up'''
+    }
+
+  }
   stages {
     stage('build') {
       steps {
@@ -8,5 +15,8 @@ docker-compose up'''
       }
     }
 
+  }
+  environment {
+    eShopTest = '8080'
   }
 }
