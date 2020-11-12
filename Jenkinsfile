@@ -4,7 +4,8 @@ pipeline {
     stage('build') {
       steps {
         sh 'echo build'
-        sh 'make'
+        sh '''docker-compose.yml build
+'''
       }
     }
 
