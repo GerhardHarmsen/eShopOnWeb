@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker-compose --version'
+        sh '*/src/PublicApi/ docker build'
       }
     }
 
