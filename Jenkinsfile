@@ -1,15 +1,9 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'docker-compose'
-    }
-
-  }
+  agent any
   stages {
     stage('build') {
       steps {
-        sh '''docker-compose build
-docker-compose up'''
+        sh 'echo build'
       }
     }
 
