@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '*/src/PublicApi/ docker build'
+        sh 'docker build'
       }
     }
 
