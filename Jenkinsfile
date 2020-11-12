@@ -1,11 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Build ') {
       steps {
-        echo 'Building'
-        sh 'docker-compose up'
-        echo 'Build completed'
+        sh 'sh \'docker-compose up\''
+        echo 'Check complete'
       }
     }
 
