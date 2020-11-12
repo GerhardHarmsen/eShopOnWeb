@@ -1,9 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'docker-compose'
-      args '''docker-compose build 
-docker-compose up'''
+    dockerfile {
+      filename 'docker-compose'
     }
 
   }
