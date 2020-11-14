@@ -1,7 +1,7 @@
 pipeline {
   agent {
     dockerfile {
-      args '-it --entrypoint=["dotnet", "PublicApi.dll"]'
+      args '-it --entrypoint='
     }
 
   }
