@@ -5,7 +5,6 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'dotnet --version'
         sh 'cd tests'
       }
     }
