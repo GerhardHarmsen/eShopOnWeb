@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    dockerfile { args '-it --entrypoint=/bin/bash'}
+    dockerfile { args '-it --entrypoint='}
   }
   stages {
     stage('Test') {
