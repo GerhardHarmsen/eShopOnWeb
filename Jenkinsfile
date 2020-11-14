@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'cd tests'
+        sh 'docker run'
       }
     }
 
