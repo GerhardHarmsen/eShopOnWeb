@@ -1,14 +1,10 @@
 pipeline {
-  agent {
-    docker {
-      image 'src/Web/Dockerfile'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
       steps {
-        sh 'docker build'
+        sh '''docker-compose build
+docker-compose up '''
       }
     }
 
