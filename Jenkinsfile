@@ -1,7 +1,7 @@
 epipeline {
   agent {
     dockerfile {
-      dir '/src/Web' 
+      dir src/Web 
     }
   }
   stages {
