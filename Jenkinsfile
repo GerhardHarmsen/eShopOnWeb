@@ -5,15 +5,14 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'node --version'
-        sh 'svn --version'
+        sh 'dotnet --version'
+        sh 'cd tests'
       }
     }
 
     stage('Unit tests') {
       steps {
-        sh '''cd tests
-cd FunctionalTests
+        sh '''cd FunctionalTests
 dotnet restore 
 dotnet build
 dotnet test
