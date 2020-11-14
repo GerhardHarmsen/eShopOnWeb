@@ -1,6 +1,9 @@
 pipeline {
   agent {
-    dockerfile { args '-it --entrypoint='}
+    dockerfile {
+      args '-it --entrypoint='
+    }
+
   }
   stages {
     stage('Test') {
@@ -11,12 +14,13 @@ pipeline {
 
     stage('Unit tests') {
       steps {
-        sh ''' cd tests
+        sh '''cd tests
 cd FunctionalTests
-dotnet restore 
-dotnet build
-dotnet test
+
 '''
+        dotnetRestore()
+        dotnetBuild()
+        dotnetTest()
       }
     }
 
