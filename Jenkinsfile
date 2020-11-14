@@ -1,6 +1,8 @@
-pipeline {
+epipeline {
   agent {
-    dockerfile true
+    dockerfile {
+      dir '/src/Web' 
+    }
   }
   stages {
     stage('Test') {
