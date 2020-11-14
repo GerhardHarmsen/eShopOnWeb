@@ -11,7 +11,8 @@ pipeline {
 
     stage('Unit tests') {
       steps {
-        sh '''cd FunctionalTests
+        sh ''' cd tests
+cd FunctionalTests
 dotnet restore 
 dotnet build
 dotnet test
