@@ -1,7 +1,7 @@
 pipeline {
   agent {
     dockerfile {
-      args '-it --entrypoint='
+      args '-it --entrypoint=["dotnet", " MyAssembly.dll"]'
     }
 
   }
