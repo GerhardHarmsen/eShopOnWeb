@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    dockerfile {
-      filename '/src/Web/Dockerfile'
+    docker {
+      image 'src/Web/Dockerfile'
     }
 
   }
