@@ -26,10 +26,13 @@ cd FunctionalTests
           }
         }
 
-        stage('error') {
+        stage('IntegrationTest') {
           steps {
             sh '''cd tests 
 cd IntergrationTests'''
+            dotnetToolRestore()
+            dotnetBuild()
+            dotnetTest()
           }
         }
 
