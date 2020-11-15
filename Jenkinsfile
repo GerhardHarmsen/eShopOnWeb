@@ -14,7 +14,7 @@ pipeline {
 
     stage('Unit tests') {
       parallel {
-        stage('Unit tests') {
+        stage('Functional Tests') {
           steps {
             sh '''cd tests
 cd FunctionalTests
@@ -29,13 +29,29 @@ cd FunctionalTests
         stage('IntegrationTest') {
           steps {
             sh '''cd tests 
-cd IntergrationTests'''
+cd IntegrationTests'''
             dotnetToolRestore()
             dotnetBuild()
             dotnetTest()
           }
         }
 
+        stage('UnitTests') {
+          steps {
+            sh '''cd test
+cd UnitTests'''
+            dotnetRestore()
+            dotnetBuild()
+            dotnetTest()
+          }
+        }
+
+      }
+    }
+
+    stage('') {
+      steps {
+        echo 'Pipeline complete'
       }
     }
 
