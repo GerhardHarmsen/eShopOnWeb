@@ -26,10 +26,10 @@ cd FunctionalTests
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sh '''cd tests 
-cd FunctionalTests'''
+cd IntergrationTests'''
           }
         }
 
