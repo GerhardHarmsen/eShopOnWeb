@@ -13,14 +13,26 @@ pipeline {
     }
 
     stage('Unit tests') {
-      steps {
-        sh '''cd tests
+      parallel {
+        stage('Unit tests') {
+          steps {
+            sh '''cd tests
 cd FunctionalTests
 
 '''
-        dotnetRestore()
-        dotnetBuild()
-        dotnetTest()
+            dotnetRestore()
+            dotnetBuild()
+            dotnetTest()
+          }
+        }
+
+        stage('') {
+          steps {
+            sh '''cd tests 
+cd FunctionalTests'''
+          }
+        }
+
       }
     }
 
