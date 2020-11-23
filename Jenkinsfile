@@ -9,7 +9,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'cd tests'
-        dotnetTest(workDirectory: 'tests/FunctionalTests')
+        dotnetBuild configuration: 'Debug', sdk: 'DotNet', workDirectory: 'test/FunctionalTests'
       }
     }
 
