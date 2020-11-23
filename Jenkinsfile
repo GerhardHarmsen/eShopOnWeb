@@ -8,8 +8,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'cd tests'
-        dotnetBuild configuration: 'Debug', sdk: 'DotNet', workDirectory: 'tests/FunctionalTests'
+        dotnetTest configuration: 'Release', project: 'tests/FunctionalTests', sdk: 'DotNet', unstableIfWarnings: true, workDirectory: 'tests/FunctionalTests'
       }
     }
 
