@@ -18,8 +18,7 @@ pipeline {
           steps {
             sh '''cd tests
 cd FunctionalTests
-cd /bin/sh
-ls'''
+dotnet --version'''
             sh '''dotnet restore
 dotnet build
 dotnet test'''
