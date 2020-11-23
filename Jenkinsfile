@@ -20,7 +20,9 @@ pipeline {
 cd FunctionalTests
 
 '''
-            sh 'dotnet restore'
+            sh '''dotnet restore
+dotnet build
+dotnet test'''
           }
         }
 
@@ -28,19 +30,19 @@ cd FunctionalTests
           steps {
             sh '''cd tests 
 cd IntegrationTests'''
-            dotnetToolRestore()
-            dotnetBuild()
-            dotnetTest()
+            sh '''dotnet restore
+dotnet build
+dotnet test'''
           }
         }
 
         stage('UnitTests') {
           steps {
-            sh '''cd test
+            sh '''cd tests
 cd UnitTests'''
-            dotnetRestore()
-            dotnetBuild()
-            dotnetTest()
+            sh '''dotnet restore
+dotnet build
+dotnet test'''
           }
         }
 
