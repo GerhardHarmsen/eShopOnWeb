@@ -18,8 +18,8 @@ pipeline {
           steps {
             sh '''cd tests
 cd FunctionalTests
-
-'''
+cd /bin/sh
+ls'''
             sh '''dotnet restore
 dotnet build
 dotnet test'''
