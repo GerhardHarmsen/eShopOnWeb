@@ -20,9 +20,7 @@ pipeline {
 cd FunctionalTests
 
 '''
-            dotnetRestore()
-            dotnetBuild()
-            dotnetTest()
+            sh 'dotnet restore'
           }
         }
 
@@ -49,7 +47,7 @@ cd UnitTests'''
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         echo 'Pipeline complete'
       }
